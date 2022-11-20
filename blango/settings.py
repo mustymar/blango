@@ -153,7 +153,7 @@ class Dev(Configuration):
     # SECURITY WARNING: keep the secret key used in production secret!
 
     SECRET_KEY = 'django-insecure-+sn%dpa!086+g+%44z9*^j^q-u4n!j(#wl)x9a%_1op@zz2+1-'
-
+    REGISTRATION_OPEN = True
     # SECURITY WARNING: don't run with debug turned on in production!
     DEBUG = values.BooleanValue(True)
     AUTH_USER_MODEL = "blango_auth.user"
@@ -316,6 +316,12 @@ class Dev(Configuration):
       'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
     ]
     INTERNAL_IPS = ["192.168.10.93"]
+
+    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+    ACCOUNT_ACTIVATION_DAYS = 7
+
+
 
 
 
